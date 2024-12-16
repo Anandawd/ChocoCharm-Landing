@@ -580,6 +580,19 @@ main .description {
   }
 }
 
+@media screen and (max-width: 375px) {
+  /* NAVBAR */
+  .navbar .logo img {
+    max-width: 50%;
+  }
+
+  /* HERO */
+  .hero .hero-banner img {
+    margin-top: 4rem;
+    max-width: 90%;
+  }
+}
+
 @media screen and (max-width: 320px) {
   /* NAVBAR */
   .navbar .logo img {
