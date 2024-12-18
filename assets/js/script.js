@@ -3,13 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const navClose = document.getElementById("nav-close");
 
-  console.log("navMenu");
-  console.log(navMenu);
-  console.log("navClose");
-  console.log(navClose);
-  console.log("hamburger");
-  console.log(hamburger);
-
   // Show menu
   if (hamburger) {
     hamburger.addEventListener("click", () => {
@@ -39,4 +32,30 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("show-menu");
     });
   });
+
+  // ============================================
+  // Animasi Scroll Produk dari Kiri/Kanan
+  // ============================================
+
+  const animateProduct = document.querySelectorAll(
+    ".animate-left, .animate-right"
+  );
+
+  function handleScrollAnimation() {
+    animateProduct.forEach((el) => {
+      const pos = el.getBoundingClientRect().top; // Posisi elemen relatif ke viewport
+      const windowHeight = window.innerHeight;
+
+      // Jika elemen berada dalam viewport, tambahkan class 'show'
+      if (pos < windowHeight - 100) {
+        el.classList.add("show-product");
+      } else {
+        el.classList.remove("show-product");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", handleScrollAnimation);
+
+  handleScrollAnimation();
 });

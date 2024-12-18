@@ -271,6 +271,36 @@ main .description {
   flex-direction: row-reverse;
 }
 
+.animate-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-in-out;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
+}
+
+.show-product {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-image {
+  width: 100%; /* Pastikan gambar responsif */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out; /* Smooth efek zoom */
+  border-radius: 8px; /* Untuk memberikan sudut melengkung jika diinginkan */
+  cursor: pointer;
+}
+
+.card-image:hover {
+  transform: scale(1.2); /* Membesarkan gambar 10% */
+}
+
 /* REVIEW */
 .review {
   display: flex;
@@ -485,7 +515,9 @@ main .description {
     display: block;
     font-size: 1.5rem;
     color: var(--black-color);
+    background-color: transparent;
     cursor: pointer;
+    z-index: 55;
   }
 
   /* Show menu */
